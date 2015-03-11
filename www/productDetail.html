@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/detailProduct_main.less.css" class="main-less">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+    <script src="intelxdk.js"></script>
+    <script src="cordova.js"></script>
+    <script type="application/javascript" src="js/index.js"></script>
+
+    <script type="application/javascript" src="js/jquery.min.js"></script>
+    <script type="application/javascript" src="js/wsconnection.js"></script>
+    <script type="application/javascript" src="js/products.js"></script>
+
+    <script type="application/javascript" src="sidebar/js/jquery.event.move.js"></script>
+    <script type="application/javascript" src="sidebar/js/jquery.event.swipe.js"></script>
+    <script type="application/javascript" src="sidebar/js/sidebar.js"></script>
+    <script type="application/javascript" src="sidebar/js/swipe.js"></script>
+    <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+    <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+    <script type="application/javascript" src="js/app.js"></script>
+  </head>
+
+  <body onload="onProductDetailInit()">
+
+    <div class="upage fondo" id="mainpage">
+      <div class="upage-outer">
+        <div class="uib-header header-bg container-group inner-element uib_w_1 uib-header-fixed" data-uib="layout/header" data-ver="0">
+          <h2>Sophos Market</h2>
+          <div class="widget-container wrapping-col single-centered"></div>
+          <div class="widget-container content-area horiz-area wrapping-col left"></div>
+          <div class="widget-container content-area horiz-area wrapping-col right"></div>
+        </div>
+        <div class="upage-content content-area vertical-col" id="page_58_1">
+          <div class="widget uib_w_2 scale-image d-margins marginimg" data-uib="media/img" data-ver="0">
+            <figure class="figure-align">
+              <img src="images/imagen.png" id="product_img">
+
+              <figcaption data-position="bottom"></figcaption>
+            </figure>
+          </div>
+
+          <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_2 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+
+                <span class="widget uib_w_7 label label-warning margintit" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Nombre</span><span class="widget uib_w_3 label label-default" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1"
+                id="product_name">nombre</span>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_1 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+
+                <span class="widget uib_w_8 d-margins label label-warning margintit" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Precio</span><span class="widget uib_w_4 label label-default" data-uib="twitter%20bootstrap/badge_and_label"
+                data-ver="1" id="product_price">precio</span>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+
+          <span class="widget uib_w_12 label label-warning" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Descripcion</span>
+          <div class="table-thing widget uib_w_11 marginarea margintit text input show textarea area" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+            <label class="narrow-control"></label>
+            <textarea rows="10" disabled="true" class="wide-control form-control" wrap="soft" id="product_desc"></textarea>
+          </div>
+          <button class="btn widget uib_w_6 d-margins btn-lg btn-danger sophoscolor" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnofertar">Comprar<i class="glyphicon glyphicon-shopping-cart button-icon-right" data-position="right"></i>
+          </button>
+          <button class="btn widget uib_w_19 d-margins sophoscolor btn-lg btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnAsk">Preguntar<i class="glyphicon glyphicon-envelope button-icon-right" data-position="right"></i>
+          </button>
+          <div class="grid grid-pad urow uib_row_2 row-height-2" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_3 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+        </div>
+
+        <div class="uib-footer uib-footer-fixed footer-bg container-group inner-element uib_w_13" data-uib="layout/footer" data-ver="0">
+          <h2></h2>
+          <div class="widget-container wrapping-col single-centered">
+            <div class="btn-group uib-bs-flex widget uib_w_14 d-margins botonfondo" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+              <button class="btn widget uib_w_15 btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="myproducts"><i class="glyphicon glyphicon-user button-icon-left" data-position="left"></i>Mis Productos</button>
+              <button class="btn widget uib_w_18 d-margins btn-sm btn-warning sophoscolor" data-uib="twitter%20bootstrap/button" data-ver="1" id="products"><i class="glyphicon glyphicon-shopping-cart button-icon-left" data-position="left"></i>Comprar</button>
+              <button class="btn widget uib_w_16 btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="sale"><i class="glyphicon glyphicon-usd button-icon-left" data-position="left"></i>Vender</button>
+              <button class="btn widget uib_w_17 btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="logout"><i class="glyphicon glyphicon-home button-icon-left" data-position="left"></i>Salir</button>
+            </div>
+          </div>
+          <div class="widget-container content-area horiz-area wrapping-col left"></div>
+          <div class="widget-container content-area horiz-area wrapping-col right"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
