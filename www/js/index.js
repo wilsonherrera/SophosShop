@@ -7,7 +7,7 @@ function authHandler(response){
 			//alert("Bienvenido "+ document.getElementById("username").value);
 			setTimeout(function(){
 			navigation('login')},0);
-		break;//as
+		break;
 		case '0':
 			alert("El usuario o contraseña ingresados son incorrectos");
 		break;
