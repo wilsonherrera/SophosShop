@@ -10,6 +10,7 @@ function onDeviceReady(){
           };
 }
 
+//prueba
 function onProductsInit(){
     
      fillProductsList();
