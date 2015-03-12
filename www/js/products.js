@@ -10,11 +10,12 @@ function messageHandler(jsonResponse){
 	var listId = 0;
 	$.each(jsonProductArray, function (key, value) {
 		var idImage = value.id_default_image;
-	$('#productListView').append('<li onclick="productDetail('+listId+')" class="topcoat-list__item widget uib_w_4" data-uib="topcoat/list_item" data-ver="0"> <a> <img class="list-image" src="http://190.143.91.138:9191/prestashop/img/p/'+idImage+'/'+idImage+'-cart_default.jpg"> <div class="list-text"><b>'+value.name+'</b> <br/><b>Price: $'+parseFloat(value.price).toFixed(2)+'</b> </div> </a> </li>');
-	listId++;	
+	$('#productListView').append('<a class="list-group-item allow-badge widget uib_w_11" data-uib="twitter%20bootstrap/list_item" data-ver="1" onclick="productDetail('+listId+')" ><div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0"><div class="col uib_col_3 col-0_4-12" data-uib="layout/col" data-ver="0"><div class="widget-container content-area vertical-col"><div class="widget uib_w_12 scale-image d-margins" data-uib="media/img" data-ver="0"><figure class="figure-align"><img src="http://190.143.91.138:9191/prestashop/img/p/'+idImage+'/'+idImage+'-cart_default.jpg"><figcaption data-position="bottom"></figcaption></figure></div><span class="uib_shim"></span></div></div><div class="col uib_col_2 col-0_8-12" data-uib="layout/col" data-ver="0"><div class="widget-container content-area vertical-col"><span class="widget uib_w_13 label label-warning" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Producto</span><span class="widget uib_w_14 label label-default" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1" id="product">'+value.name+'</span><span class="widget uib_w_15 label label-warning margintop" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Precio</span><span class="widget uib_w_16 label label-default" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1" id="price">Price: $'+parseFloat(value.price).toFixed(2)+'</span><span class="uib_shim"></span></div></div><span class="uib_shim"></span></div></div></a>');
+listId++;	
 	});
 	$('#productListView').listview('refresh');
 }
+
 
 function messageHandlerCreateProduct(response){
 	waitingDialog.hide();
