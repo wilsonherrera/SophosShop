@@ -34,6 +34,28 @@ function addNewProduct(newProduct, callback, data){
     };
 }
 
+function updateProduct(newProduct, callback, data){
+	waitingDialog.show();
+ 	var url ="http://190.143.91.138:9191/prestashop/PrestaShopWebService.php?method=updateProduct&product=".concat(newProduct);
+    var http_request = new XMLHttpRequest();
+    http_request.open("POST", url, true);
+	http_request.setRequestHeader("Content-type","application/x-www-form-urlencoded; charset=utf-8");
+	var postData = JSON.parse("{}");
+	postData.data = data;
+    http_request.send("product="+JSON.stringify(postData));
+   // http_request.send(null);
+    http_request.onreadystatechange = function() {
+        if (http_request.readyState == 4) {
+            if (http_request.status == 200) {
+                 document.getElementById("product_name").value = http_request.responseText;
+				callback(http_request.responseText);
+            }
+            http_request = null;
+        }
+    };
+}
+
+
 function validateLogin(username, password, callback){
 	waitingDialog.show();
 	var url ="http://190.143.91.138:9191/prestashop/PrestaShopWebService.php?method=login&user="+username+"&password="+password+"";
