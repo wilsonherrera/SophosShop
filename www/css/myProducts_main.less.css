@@ -515,3 +515,18 @@ body:not(#afui) .upage-outer {
 .list-group .d-margins {
   margin: 0;
 }
+@media all {
+  .wrapping-col > .margintop,
+  .wrapping-col > .afScrollPanel > .margintop {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .wrapping-col > .margintop,
+  .wrapping-col > .afScrollPanel > .margintop {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .margintop {
+    margin-top: 20px;
+  }
+}
