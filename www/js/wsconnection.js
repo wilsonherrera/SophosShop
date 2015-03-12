@@ -87,7 +87,7 @@ function getDataUser(username, password, callback){
 
 //recibe los productos del usuario logeado
 function getProductsUser(username,callback){
-	//waitingDialog.show();
+	waitingDialog.show();
  	var url ="http://190.143.91.138:9191/prestashop/PrestaShopWebService.php?method=productsPerUser&user="+username;
     var http_request = new XMLHttpRequest();
     http_request.open("POST", url, true);

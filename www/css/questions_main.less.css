@@ -433,87 +433,6 @@ body:not(#afui) .upage-outer {
 .sophoscolor {
   background: #820036;
 }
-.uib_row_1 > .col {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-@media all and (min-width: 0px) {
-  .uib_col_3 {
-    width: 33%;
-  }
-  .urow.cright > .uib_col_3 {
-    padding-left: 0px !important;
-  }
-  .urow:not(.cright) > .uib_col_3 {
-    clear: left;
-    padding-left: 0px !important;
-  }
-  .uib_col_2 {
-    width: 34%;
-  }
-  .uib_col_1 {
-    width: 33%;
-  }
-  .urow:not(.cright) > .uib_col_1 {
-    padding-right: 0px !important;
-  }
-  .urow.cright > .uib_col_1 {
-    clear: right;
-    padding-right: 0px !important;
-  }
-}
-@media all and (min-width: 0px) and (max-width: 0px) {
-  .uib_col_3.uib_col_3 {
-    width: auto;
-    float: none !important;
-    clear: both;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-  .uib_col_2 {
-    width: 50%;
-  }
-  .urow.cright > .uib_col_2 {
-    padding-left: 0px !important;
-  }
-  .urow:not(.cright) > .uib_col_2 {
-    clear: left;
-    padding-left: 0px !important;
-  }
-  .uib_col_1 {
-    width: 50%;
-  }
-  .urow:not(.cright) > .uib_col_1 {
-    padding-right: 0px !important;
-  }
-  .urow.cright > .uib_col_1 {
-    clear: right;
-    padding-right: 0px !important;
-  }
-}
-@media all and (max-width: 0px) {
-  .col-0_4-12_4-4 {
-    width: auto;
-    float: none !important;
-    clear: both;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-  .col-0_4-12_4-8 {
-    width: auto;
-    float: none !important;
-    clear: both;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-  .col-0_4-12_4-8 {
-    width: auto;
-    float: none !important;
-    clear: both;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-}
 @media all {
   .grid-pad {
     padding-bottom: 5px;
@@ -536,10 +455,7 @@ body:not(#afui) .upage-outer {
   vertical-align: middle;
 }
 @media all {
-  .scale-image img {
-    width: 100%;
-    height: 100%;
-  }
+  
 }
 .vertical-col > .label {
   display: block;
@@ -563,5 +479,52 @@ body:not(#afui) .upage-outer {
   }
   .marginButtons {
     margin-top: 10px;
+  }
+}
+.uib_row_2 > .col {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media all and (min-width: 0px) {
+  .uib_col_2 {
+    width: 34%;
+  }
+  .urow.cright > .uib_col_2 {
+    padding-left: 0px !important;
+  }
+  .urow:not(.cright) > .uib_col_2 {
+    clear: left;
+    padding-left: 0px !important;
+  }
+  .uib_col_1 {
+    width: 66%;
+  }
+  .urow:not(.cright) > .uib_col_1 {
+    padding-right: 0px !important;
+  }
+  .urow.cright > .uib_col_1 {
+    clear: right;
+    padding-right: 0px !important;
+  }
+}
+@media all and (max-width: 0px) {
+  .col-0_4-12 {
+    width: auto;
+    float: none !important;
+    clear: both;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .col-0_8-12 {
+    width: auto;
+    float: none !important;
+    clear: both;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+@media all and (min-width: 0px) {
+  .row-height-2 > .col > .content-area {
+    min-height: 100px;
   }
 }
