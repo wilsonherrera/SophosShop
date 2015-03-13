@@ -81,7 +81,7 @@ function setProductDetail() {
 	document.getElementById('product_price').innerHTML = "Price: $" + jsonProductArray[selectedProductId].price;
 	document.getElementById('product_desc').innerHTML = (jsonProductArray[selectedProductId].description === null) ? jsonProductArray[selectedProductId].description_short : jsonProductArray[selectedProductId].description;
 
-	localStorage.productName = jsonProductArray[selectedProductId].name; >>> >>> > origin / master
+	localStorage.productName = jsonProductArray[selectedProductId].name;
 	localStorage.productPrice = document.getElementById('product_price').innerHTML;
 	localStorage.imgSrc = document.getElementById('product_img').src;
 }
