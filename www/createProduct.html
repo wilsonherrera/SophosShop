@@ -29,13 +29,17 @@
 
   <body onload="onCreateProductInit()">
 
+    <div id="commentsDialigDiv"></div>
     <div class="upage fon" id="mainpage">
       <div class="upage-outer">
         <div class="uib-header header-bg container-group inner-element uib_w_1 uib-header-fixed" data-uib="layout/header" data-ver="0">
           <h2>Sophos Market</h2>
           <div class="widget-container wrapping-col single-centered"></div>
           <div class="widget-container content-area horiz-area wrapping-col left"></div>
-          <div class="widget-container content-area horiz-area wrapping-col right"></div>
+          <div class="widget-container content-area horiz-area wrapping-col right">
+            <button class="btn widget uib_w_16 d-margins btn-danger sophoscolor bordePreguntas btComentarios" data-uib="twitter%20bootstrap/button" data-toggle="modal" data-ver="1" data-target="#comments"><i class="glyphicon glyphicon-info-sign button-icon-left" data-position="left"></i>
+            </button>
+          </div>
         </div>
         <div class="upage-content content-area vertical-col left" id="page_26_86">
 
@@ -55,7 +59,8 @@
               <div class="widget-container content-area vertical-col">
 
                 <button class="btn widget uib_w_3 d-margins btn-sm btn-warning sophoscolor" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnImage">Tomar Foto</button>
-                <button class="btn widget uib_w_4 d-margins btn-sm btn-warning sophoscolor" data-uib="twitter%20bootstrap/button" data-ver="1">Seleccionar Imagen</button><span class="uib_shim"></span>
+                <button class="btn widget uib_w_4 d-margins btn-sm btn-warning sophoscolor" data-uib="twitter%20bootstrap/button" data-ver="1" onclick="getPhotoFromGallery()">Seleccionar Imagen</button>
+                <span class="uib_shim"></span>
               </div>
             </div>
             <span class="uib_shim"></span>
@@ -93,6 +98,7 @@
             <span class="uib_shim"></span>
           </div>
         </div>
+
         <div class="uib-footer uib-footer-fixed footer-bg container-group inner-element uib_w_17" data-uib="layout/footer" data-ver="0">
           <h2></h2>
           <div class="widget-container wrapping-col single-centered">
