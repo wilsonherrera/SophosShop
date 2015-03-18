@@ -329,7 +329,7 @@ body:not(#afui) .upage-outer {
 }
 @media all {
   .grid-pad {
-    padding-top: 30px;
+    padding-top: 5px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -359,8 +359,8 @@ body:not(#afui) .upage-outer {
     margin-right: 6px;
   }
   .d-margins {
-    margin-top: 0px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;
   }
 }
 @media all and (min-width: 0px) {
@@ -495,7 +495,7 @@ label:empty {
     margin-right: 6px;
   }
   .imagemargins {
-    margin-top: 10%;
+    margin-top: 55px;
   }
 }
 @media all {
@@ -529,8 +529,8 @@ label:empty {
     margin-right: 6px;
   }
   .labelmargin {
-    margin-top: 20%;
-    margin-bottom: 2px;
+    margin-top: 10%;
+    margin-bottom: 1px;
   }
 }
 .labelcenter {
@@ -549,7 +549,7 @@ label:empty {
   }
   .labelpass {
     margin-top: 10%;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
   }
 }
 .botonfooter {
@@ -569,7 +569,7 @@ label:empty {
     margin-right: 5%;
   }
   .margbotfon {
-    margin-top: 5%;
+    margin-bottom: -10px;
   }
 }
 .align-widget {
@@ -631,7 +631,6 @@ label:empty {
 }
 @media all {
   .footer-bg {
-    background-color: #fdfdfd;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -649,6 +648,7 @@ label:empty {
     margin-right: 6px;
   }
   .botonmargin {
+    margin-top: 15px;
     margin-bottom: 10px;
   }
 }
@@ -659,15 +659,13 @@ label:empty {
     -ms-flex: 1 1 auto !important;
     -o-flex: 1 1 auto !important;
     flex: 1 1 auto !important;
-    width: 85%;
-    min-width: 85%;
-    max-width: 85%;
+    width: 80%;
+    min-width: 80%;
+    max-width: 80%;
   }
 }
 .footer {
-  position: relative;
-  margin-top: -10%;
-  height: 10%;
+  bottom: -15px !important;
 }
 .panel {
   overflow: auto;
@@ -691,7 +689,7 @@ label:empty {
   }
 }
 .pad {
-  margin-top: 30%;
+  margin-top: 40%;
 }
 .sophoscolor {
   background: #820036;
@@ -746,4 +744,10 @@ label:empty {
   .urow.cright > .col-0_12-12 {
     padding-left: 0px !important;
   }
+}
+.well {
+  background: transparent;
+  border: none;
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0);
 }

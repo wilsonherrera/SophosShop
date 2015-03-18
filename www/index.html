@@ -96,36 +96,87 @@
                         <p>Sophos Market</p>
                     </div>
                 </div>
-                <div class="upage-content content-area vertical-col" id="page_60_43">
 
-                    <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
-                        <div class="col uib_col_3 col-0_12-12 size" data-uib="layout/col" data-ver="0">
-                            <div class="widget-container content-area vertical-col">
-
-                                <div class="widget uib_w_2 d-margins imagen imagemargins altura" data-uib="media/img" data-ver="0">
-                                    <figure class="figure-align">
-                                        <img src="images/logo.png" width="80%" height="25%">
-                                        <figcaption data-position="bottom"></figcaption>
-                                    </figure>
-                                </div><span class="widget uib_w_8 labelmargin labelwhith labelcenter label label-warning" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Usuario</span> 
-                                <div class="table-thing widget uib_w_4" data-uib="twitter%20bootstrap/input" data-ver="1">
-                                    <label class="narrow-control" for="username"></label>
-                                    <input class="wide-control form-control default" type="text" id="username">
-                                </div><span class="widget uib_w_9 labelpass labelwhith labelcenter label label-warning" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Contraseña</span>
-                                <div class="table-thing widget uib_w_6" data-uib="twitter%20bootstrap/input" data-ver="1">
-                                    <label class="narrow-control" for="password"></label>
-                                    <input class="wide-control form-control default" type="password" id="password">
-                                </div>
-
-                                <button class="btn widget uib_w_7 botonFondo botonfooter margbotfon botonmargin widthboton btn-lg btn-danger sophoscolor" data-uib="twitter%20bootstrap/button" data-ver="1" id="login">Ingresar<i class="glyphicon glyphicon-hand-right button-icon-right" data-position="right"></i>
-                                </button>
+                <div class="widget uib_w_2 scale-image imagen imagemargins" data-uib="media/img" data-ver="0">
+                    <figure class="figure-align">
+                        <img src="images/logo.png">
+                        <figcaption data-position="bottom"></figcaption>
+                    </figure>
+                </div>
+                <div class="well no_wrap  widget uib_w_12 d-margins" data-uib="twitter%20bootstrap/well" data-ver="1">
+                    <div class="col uib_col_6 single-col" data-uib="layout/col" data-ver="0">
+                        <div class="widget-container content-area vertical-col">
+                            <span class="widget uib_w_8 labelmargin labelwhith label label-warning labelcenter" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Usuario</span>
+                            <div class="table-thing widget uib_w_4" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                <label class="narrow-control" for="username"></label>
+                                <input class="wide-control form-control default" type="text" id="username" value="">
+                            </div><span class="widget uib_w_9 labelpass labelwhith labelcenter label label-warning" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Contraseña</span>
+                            <div class="table-thing widget uib_w_6" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                <label class="narrow-control" for="password"></label>
+                                <input class="wide-control form-control default" type="password" id="password" value="">
                             </div>
-
-                            <span class="uib_shim"></span>
+                            <button class="btn widget uib_w_7 botonFondo margbotfon botonmargin widthboton btn-lg btn-danger sophoscolor botonfooter" data-uib="twitter%20bootstrap/button" data-ver="1" id="login">Ingresar<i class="glyphicon glyphicon-hand-right button-icon-right" data-position="right"></i>
+                            </button><span class="uib_shim"></span>
                         </div>
                     </div>
+                </div>
+                <div class="upage-content content-area vertical-col" id="page_60_43">
+
                     <span class="uib_shim"></span>
 
+                    <div class="grid urow uib_row_2 row-height-2 pad" data-uib="layout/row" data-ver="0">
+                        <div class="col uib_col_4 col-0_12-12" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col">
+
+                                <span class="uib_shim"></span>
+                            </div>
+                        </div>
+                        <span class="uib_shim"></span>
+                    </div>
+                </div>
+                <div class="modal outer-element uib_w_12" data-uib="twitter%20bootstrap/modal" data-ver="1" data-backdrop="true" data-keyboard="true" id="comments">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal">x</button>
+                                <h4 class="modal-title">Comentarios</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="col uib_col_1 single-col" data-uib="layout/col" data-ver="0">
+                                    <div class="widget-container content-area vertical-col">
+
+                                        <div class="widget uib_w_13 d-margins" data-uib="media/text" data-ver="0">
+                                            <div class="widget-container left-receptacle"></div>
+                                            <div class="widget-container right-receptacle"></div>
+                                            <div>
+                                                <p>Envianos tus comentarios, quejas, sugerencias o el reporte de algun error.</p>
+                                            </div>
+                                        </div>
+                                        <div class="table-thing widget uib_w_14 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                                            <label class="narrow-control"></label>
+                                            <textarea rows="4" class="wide-control form-control" wrap="soft" id="taComment"></textarea>
+                                        </div>
+                                        <button class="btn widget uib_w_15 d-margins btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" data-dismiss="modal" onclick="sendComment()">Enviar<i class="glyphicon glyphicon-info-sign button-icon-right" data-position="right"></i>
+                                        </button><span class="uib_shim"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="uib-footer uib-footer-fixed footer-bg container-group inner-element uib_w_10" data-uib="layout/footer" data-ver="0">
+                    <h2></h2>
+                    <div class="widget-container wrapping-col single-centered">
+
+                        <span class="widget uib_w_11 badge footer" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Sophos Solutions. Derechos reservados</span>
+                    </div>
+                    <div class="widget-container content-area horiz-area wrapping-col left"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
                 </div>
 
             </div>

@@ -27,7 +27,7 @@
   </head>
 
   <body onload="onProductDetailInit()">
-
+<div id="commentsDialigDiv"></div>
     <div class="upage fondo" id="mainpage">
       <div class="upage-outer">
         <div class="widget uib_w_10 d-margins textColor sophoscolor" data-uib="media/text" data-ver="0">
@@ -48,8 +48,14 @@
             <div class="col uib_col_2 col-0_6-12" data-uib="layout/col" data-ver="0">
               <div class="widget-container content-area vertical-col">
 
-                <span class="widget uib_w_7 label label-warning margintit" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Nombre</span><span class="widget uib_w_3 label label-default" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1"
-                id="product_name">nombre</span>
+                <span class="widget uib_w_7 label label-warning margintit" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Nombre</span>
+                <div class="widget uib_w_20 fondoGris" data-uib="media/text" data-ver="0" id="product_name">
+                  <div class="widget-container left-receptacle"></div>
+                  <div class="widget-container right-receptacle"></div>
+                  <div>
+                    <p>s</p>
+                  </div>
+                </div>
                 <span class="uib_shim"></span>
               </div>
             </div>
@@ -95,12 +101,12 @@
           </div>
         </div>
 
-        <div align="center" class="btn-group uib-bs-flex widget uib_w_3 d-margins footer footerBar" data-uib="twitter%20bootstrap/button_group" data-ver="1" style="margin-bottom:1%; position:fixed; width:95%">
-          <button class="btn widget uib_w_4 btn-sm btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="myproducts"><i class="glyphicon glyphicon-user button-icon-left" data-position="left"></i>Mis Productos</button>
-          <button class="btn widget uib_w_7 sophoscolor d-margins btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="products"><i class="glyphicon glyphicon-shopping-cart button-icon-left" data-position="left"></i>Comprar</button>
-          <button class="btn widget uib_w_5 btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="sale"><i class="glyphicon glyphicon-usd button-icon-left" data-position="left"></i>Vender</button>
-          <button class="btn widget uib_w_6 btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="logout"><i class="glyphicon glyphicon-home button-icon-left" data-position="left"></i>Salir</button>
-        </div><span class="uib_shim"></span>
+        <div align="center" class="btn-group uib-bs-flex widget uib_w_3 d-margins footer" data-uib="twitter%20bootstrap/button_group" data-ver="1" style="margin-bottom:1%; position:fixed; width:95%">
+      <button class="btn widget sophoscolor uib_w_4 btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="myproducts"><i class="glyphicon glyphicon-user button-icon-left" data-position="left"></i>Mis Productos</button>
+      <button class="btn widget uib_w_7 d-margins btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="products"><i class="glyphicon glyphicon-shopping-cart button-icon-left" data-position="left"></i>Comprar</button>
+      <button class="btn widget uib_w_5 btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="sale"><i class="glyphicon glyphicon-usd button-icon-left" data-position="left"></i>Vender</button>
+      <button class="btn widget uib_w_6 btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="logout"><i class="glyphicon glyphicon-home button-icon-left" data-position="left"></i>Salir</button>
+    </div><span class="uib_shim"></span>
       </div>
     </div>
   </body>
