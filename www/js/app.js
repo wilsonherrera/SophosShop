@@ -1,17 +1,17 @@
 
+
 function initApp(){
 	document.addEventListener("deviceready", onDeviceReady, false);
 }
 
 function onDeviceReady(){
-     
 	document.getElementById("login").onclick = function () {
         validateLogin(document.getElementById("username").value,document.getElementById("password").value, authHandler);
           };
 }
 
 function onProductsInit(){
-    
+    writeHtmlComments("1");
      fillProductsList();
        document.getElementById("myproducts").onclick = function () {
         navigation(this.id);
@@ -25,7 +25,7 @@ function onProductsInit(){
 	
 }
 function onMyProducts(){
-    
+     writeHtmlComments("3");
       document.getElementById("products").onclick = function () {
         navigation(this.id);
     };
@@ -43,7 +43,12 @@ function onMyProducts(){
 }
 
 function onMyProfile(){
-    
+     writeHtmlComments("3");
+     
+     document.getElementById("btnImage").onclick = function () {
+        getPhotoProfile();
+    };
+     
       document.getElementById("products").onclick = function () {
         navigation(this.id);
     };
@@ -63,6 +68,7 @@ function onMyProfile(){
       getDataUser(localStorage.userName,localStorage.password, profileHandler);
 }
 function onQuestions(){
+      writeHtmlComments("3");
       document.getElementById("products").onclick = function () {
         navigation(this.id);
     };
@@ -83,7 +89,7 @@ function onQuestions(){
 }
 
 function onProductDetailInit(){
-    
+     writeHtmlComments("3");
      document.getElementById("myproducts").onclick = function () {
         navigation(this.id);
     };
@@ -107,6 +113,7 @@ function onProductDetailInit(){
 }
 
 function onCreateProductInit(){
+      writeHtmlComments("3");
       document.getElementById("myproducts").onclick = function () {
         navigation(this.id);
     };
@@ -169,6 +176,17 @@ function navigation (e){
 	}
 	location.href = page;
 }
+
+
+//coloca el codigo del dialogo para enviar comentarios al div commentsDialigDiv
+function writeHtmlComments(num){
+   $( "#commentsDialigDiv" ).html( ' <div class="modal outer-element uib_w_12" data-uib="twitter%20bootstrap/modal" data-ver="1" data-backdrop="true" data-keyboard="true" id="comments"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button class="close" data-dismiss="modal">x</button><h4 class="modal-title">Comentarios</h4></div><div class="modal-body"><div class="col uib_col_'+num+' single-col" data-uib="layout/col" data-ver="0"><div class="widget-container content-area vertical-col"><div class="widget uib_w_13 d-margins" data-uib="media/text" data-ver="0"><div class="widget-container left-receptacle"></div><div class="widget-container right-receptacle"></div><div><p>Envianos tus comentarios, quejas, sugerencias o el reporte de algun error.</p></div></div><div class="table-thing widget uib_w_14 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1"><label class="narrow-control"></label><textarea rows="4" class="wide-control form-control" wrap="soft" id="taComment"></textarea></div><button class="btn widget uib_w_15 d-margins btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" data-dismiss="modal" onclick="sendComment()">Enviar<i class="glyphicon glyphicon-info-sign button-icon-right" data-position="right"></i></button><span class="uib_shim"></span></div></div></div><div class="modal-footer"></div></div></div></div>' );    
+}
+
+
+
+
+
 
 var waitingDialog = (function (cash) {
 

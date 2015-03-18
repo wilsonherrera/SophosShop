@@ -132,6 +132,10 @@ function createProduct() {
 	}
 }
 
+
+
+
+
 function getPhoto() {
 	// Retrieve image file location from specified source
 	navigator.camera.getPicture(onPhotoURISuccess, onFail, {
@@ -141,11 +145,45 @@ function getPhoto() {
 	});
 }
 
+//selecciona una imagen de la galeria del telefono
+function getPhotoFromGallery(){
+navigator.camera.getPicture(onPhotoFileSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.FILE_URI,
+		sourceType: 1 });
+}
+
+//llamado cuando la imagen es seleccionada del almacenamiento interno, imageData trae la uri de la foto seleccionada
+function onPhotoFileSuccess(imageData) {
+      var imagen=encodeImageUri(imageData);
+     // document.getElementById('product_longdesc').innerHTML =  imagen;
+    var image = document.getElementById('product_img');
+	image.src =  imageData;
+      localStorage.imgData = imagen.substring(22);
+}
+
+//toma la uri de la imagen y retorna su equivalente en base 64
+function encodeImageUri(imageUri)
+{
+     var c=document.createElement('canvas');
+     var ctx=c.getContext("2d");
+    var img=new Image();
+     img.onload = function(){
+       c.width=this.width;
+       c.height=this.height;
+       ctx.drawImage(img, 0,0);
+     };
+     img.src=imageUri;
+     var dataURL = c.toDataURL("image/jpeg");
+     return dataURL;
+}
+
+
+
+
 function onPhotoURISuccess(imageData) {
 	localStorage.imgData = imageData;
 	var image = document.getElementById('product_img');
 	image.src = "data:image/jpeg;base64," + imageData;
-	alert("success");
 }
 
 function onFail(message) {

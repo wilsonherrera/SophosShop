@@ -380,7 +380,7 @@ body:not(#afui) .upage-outer {
 @media all {
   .scale-image img {
     width: 100%;
-    height: 100%;
+    height: 50%;
   }
 }
 @media all {
@@ -850,4 +850,14 @@ label:empty {
 }
 .header {
   color: white !important;
+}
+.btComentarios {
+  background: none;
+  border: none;
+}
+.left-receptacle {
+  float: left;
+}
+.right-receptacle {
+  float: right;
 }

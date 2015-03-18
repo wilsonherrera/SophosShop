@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "appDesigner",
       "projectGuid": "f2367b26-549c-479c-bfba-8d20e45ca51f",
-      "lastModifiedDate": 1425327323100,
+      "lastModifiedDate": 1426603400893,
       "creationDate": 1424806753088
     },
     "XDK-app-designer": "true",
@@ -55,6 +55,34 @@
       {
         "id": "org.apache.cordova.camera",
         "version": "0.3.4",
+        "selectedState": "Included",
+        "data": {},
+        "paramvals": {}
+      },
+      {
+        "id": "org.apache.cordova.network-information",
+        "version": "0.2.14",
+        "selectedState": "Included",
+        "data": {},
+        "paramvals": {}
+      },
+      {
+        "id": "org.apache.cordova.media-capture",
+        "version": "0.3.5",
+        "selectedState": "Included",
+        "data": {},
+        "paramvals": {}
+      },
+      {
+        "id": "org.apache.cordova.file-transfer",
+        "version": "0.4.8",
+        "selectedState": "Included",
+        "data": {},
+        "paramvals": {}
+      },
+      {
+        "id": "org.apache.cordova.media",
+        "version": "0.2.15",
         "selectedState": "Included",
         "data": {},
         "paramvals": {}

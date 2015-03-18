@@ -718,3 +718,14 @@ label:empty {
     min-height: 100px;
   }
 }
+.labelWrap {
+  margin-right: 5px;
+  margin-bottom: 5px !important;
+  display: inline-block !important;
+  word-break: break-word !important;
+}
+.fondoGris {
+  background-color: grey;
+  color: white;
+  text-align: center;
+}
