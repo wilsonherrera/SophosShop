@@ -1,0 +1,1 @@
+<!-- +Android --><preference name="android-windowSoftInputMode" value="stateVisible|adjustPan" />

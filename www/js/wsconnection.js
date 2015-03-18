@@ -43,11 +43,9 @@ function updateProduct(newProduct, callback, data){
 	var postData = JSON.parse("{}");
 	postData.data = data;
     http_request.send("product="+JSON.stringify(postData));
-   // http_request.send(null);
     http_request.onreadystatechange = function() {
         if (http_request.readyState == 4) {
             if (http_request.status == 200) {
-                 document.getElementById("product_name").value = http_request.responseText;
 				callback(http_request.responseText);
             }
             http_request = null;

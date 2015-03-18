@@ -145,7 +145,6 @@ function onPhotoURISuccess(imageData) {
 	localStorage.imgData = imageData;
 	var image = document.getElementById('product_img');
 	image.src = "data:image/jpeg;base64," + imageData;
-	alert("success");
 }
 
 function onFail(message) {
