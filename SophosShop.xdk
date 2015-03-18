@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "appDesigner",
       "projectGuid": "f2367b26-549c-479c-bfba-8d20e45ca51f",
-      "lastModifiedDate": 1426625200482,
+      "lastModifiedDate": 1425327323100,
       "creationDate": 1424806753088
     },
     "XDK-app-designer": "true",
@@ -28,14 +28,14 @@
     "cordovaPlugins": [
       {
         "id": "org.apache.cordova.device",
-        "version": "0.2.13",
+        "version": "0.2.5",
         "selectedState": "Auto",
         "data": {},
         "paramvals": {}
       },
       {
         "id": "org.apache.cordova.splashscreen",
-        "version": "0.3.5",
+        "version": "0.2.5",
         "selectedState": "Auto",
         "data": {},
         "paramvals": {}
@@ -58,34 +58,6 @@
         "selectedState": "Included",
         "data": {},
         "paramvals": {}
-      },
-      {
-        "id": "org.apache.cordova.network-information",
-        "version": "0.2.14",
-        "selectedState": "Included",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "org.apache.cordova.media-capture",
-        "version": "0.3.5",
-        "selectedState": "Included",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "org.apache.cordova.file-transfer",
-        "version": "0.4.8",
-        "selectedState": "Included",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "org.apache.cordova.media",
-        "version": "0.2.15",
-        "selectedState": "Included",
-        "data": {},
-        "paramvals": {}
       }
     ],
     "buildConfigurations": {
@@ -95,9 +67,7 @@
         "name_": "Android",
         "preferences_": {
           "android-minSdkVersion": "10",
-          "android-targetSdkVersion": "19",
-          "Fullscreen": false,
-          "Orientation": "portrait"
+          "android-targetSdkVersion": "19"
         },
         "isActive_": true,
         "appName_": "SophosShop",
@@ -112,7 +82,7 @@
         "addlPermissions_": "android.permission.INTERNET",
         "excludedLibraries_": "",
         "iosProvs_": [],
-        "cordovaCLIVersion_": "4.1.2",
+        "cordovaCLIVersion_": "3.5",
         "crosswalkVersion_": "stable",
         "appVersion_": "0.0.1",
         "appDescription_": "",
@@ -125,9 +95,7 @@
         "name_": "Android-Crosswalk",
         "preferences_": {
           "android-minSdkVersion": "14",
-          "android-targetSdkVersion": "19",
-          "Fullscreen": false,
-          "Orientation": "default"
+          "android-targetSdkVersion": "19"
         },
         "isActive_": true,
         "appName_": "SophosShop",

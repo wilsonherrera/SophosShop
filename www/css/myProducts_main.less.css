@@ -280,3 +280,7 @@ body:not(#afui) .upage-outer {
 .footer {
   bottom: -10px;
 }
+.bt {
+  background: none;
+  border: none;
+}

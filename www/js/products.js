@@ -132,10 +132,6 @@ function createProduct() {
 	}
 }
 
-
-
-
-
 function getPhoto() {
 	// Retrieve image file location from specified source
 	navigator.camera.getPicture(onPhotoURISuccess, onFail, {
@@ -146,39 +142,38 @@ function getPhoto() {
 }
 
 //selecciona una imagen de la galeria del telefono
-function getPhotoFromGallery(){
-navigator.camera.getPicture(onPhotoFileSuccess, onFail, { quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI,
-		sourceType: 1 });
+function getPhotoFromGallery() {
+  navigator.camera.getPicture(onPhotoSuccess, onPhotoFail, 
+    {quality: 70,  targetWidth: 500, targetHeight: 500,
+     sourceType: 1,
+     destinationType: navigator.camera.DestinationType.FILE_URI,
+    });
 }
 
 //llamado cuando la imagen es seleccionada del almacenamiento interno, imageData trae la uri de la foto seleccionada
-function onPhotoFileSuccess(imageData) {
-      var imagen=encodeImageUri(imageData);
-     // document.getElementById('product_longdesc').innerHTML =  imagen;
-    var image = document.getElementById('product_img');
-	image.src =  imageData;
-      localStorage.imgData = imagen.substring(22);
+function onPhotoSuccess(imageUri) {
+       var image = document.getElementById('product_img');
+ image.src =  imageUri;
+  var $img = $('<img/>');
+  $img.attr('src', imageUri);
+  $img.bind('load', function() {
+    var canvas = document.createElement("canvas");
+    canvas.width = $img.width();
+    canvas.height = $img.height();
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage($img[0], 0, 0);
+    var dataUri = canvas.toDataURL('image/jpeg');
+       localStorage.imgData=dataUri.substring(23);
+  });
+  $img.bind('error', function() {
+    console.log('Couldnt convert photo to data URI');
+  });
+  //$('body').append($img);
 }
 
-//toma la uri de la imagen y retorna su equivalente en base 64
-function encodeImageUri(imageUri)
-{
-     var c=document.createElement('canvas');
-     var ctx=c.getContext("2d");
-    var img=new Image();
-     img.onload = function(){
-       c.width=this.width;
-       c.height=this.height;
-       ctx.drawImage(img, 0,0);
-     };
-     img.src=imageUri;
-     var dataURL = c.toDataURL("image/jpeg");
-     return dataURL;
+function onPhotoFail(message) {
+   console.log(message);
 }
-
-
-
 
 function onPhotoURISuccess(imageData) {
 	localStorage.imgData = imageData;
