@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
+    <link rel="stylesheet" type="text/css" href="css/products_main.less.css" class="main-less">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+    <script src="intelxdk.js"></script>
+    <script src="cordova.js"></script>
+    <script src="xhr.js"></script>
+    <script src="xdk/init-dev.js"></script>
+    <script type="application/javascript" src="lib/jquery.min.js"></script>
+    <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+
+	  
+	  
+	  
+    <script src="js/app.js"></script>
+
+        <script type="application/javascript" src="jqm/jquery.mobile-min.js" data-ver="0"></script>
+    <script type="application/javascript" src="js/wsconnection.js"></script>
+    <script type="application/javascript" src="js/products.js"></script>
+
+    <script type="application/javascript" src="sidebar/js/jquery.event.move.js"></script>
+    <script type="application/javascript" src="sidebar/js/jquery.event.swipe.js"></script>
+    <script type="application/javascript" src="sidebar/js/sidebar.js"></script>
+    <script type="application/javascript" src="sidebar/js/swipe.js"></script>
+    <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+    <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+    <script type="application/javascript" src="js/app.js"></script>
+        <script type="application/javascript" src="popup/popup.min.js"></script>
+  </head>
+
+  <body onload="onProductsInit()">
+    <div class="upage" id="mainpage">
+      <div class="upage-outer">
+        <div class="uib-header header-bg container-group inner-element uib_w_1" data-uib="layout/header" data-ver="0">
+          <h2></h2>
+          <div class="widget-container wrapping-col single-centered">
+            <div class="widget uib_w_3 d-margins" data-uib="media/text" data-ver="0">
+              <div class="widget-container left-receptacle"></div>
+              <div class="widget-container right-receptacle"></div>
+              <div>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+          <div class="widget-container content-area horiz-area wrapping-col left"></div>
+          <div class="widget-container content-area horiz-area wrapping-col right"></div>
+        </div>
+        <div class="upage-content content-area vertical-col left">
+          <div class="list-group widget uib_w_8 d-margins" data-uib="layout/list_group" data-ver="1">
+			<ul data-role="listview" class="movies" id="productListView">
+    
+   			</ul>
+          </div>
+        </div>
+        <div class="uib-footer uib-footer-fixed footer-bg container-group inner-element uib_w_2" data-uib="layout/footer" data-ver="0">
+          <h2></h2>
+          <div class="widget-container wrapping-col single-centered">
+            <div class="uib-button-bar default-button-bar-height widget uib_w_4 d-margins" data-uib="media/button_bar" data-ver="0">
+              <a class="uib-graphic-button widget uib_w_5 media-button-text-bottom" data-uib="media/graphic_button" data-ver="0">
+                <img>
+                <span class="uib-caption">Button</span>
+              </a>
+              <a class="uib-graphic-button widget uib_w_6 media-button-text-bottom" data-uib="media/graphic_button" data-ver="0">
+                <img>
+                <span class="uib-caption">Button</span>
+              </a>
+              <a class="uib-graphic-button widget uib_w_7 media-button-text-bottom" data-uib="media/graphic_button" data-ver="0">
+                <img>
+                <span class="uib-caption">Button</span>
+              </a>
+            </div>
+          </div>
+          <div class="widget-container content-area horiz-area wrapping-col left"></div>
+          <div class="widget-container content-area horiz-area wrapping-col right"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

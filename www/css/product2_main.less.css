@@ -409,7 +409,20 @@ body:not(#afui) .upage-outer {
   flex: 1 auto;
 }
 @media all {
-  
+  .wrapping-col > .d-margins,
+  .wrapping-col > .afScrollPanel > .d-margins {
+    margin-left: 3px;
+    margin-right: 4px;
+  }
+  .wrapping-col > .d-margins,
+  .wrapping-col > .afScrollPanel > .d-margins {
+    margin-left: 3px;
+    margin-right: 4px;
+  }
+  .d-margins {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
 .allow-badge > .badge.glyphicon {
   display: inline-block;
@@ -491,7 +504,10 @@ body:not(#afui) .upage-outer {
   }
 }
 @media all {
-  
+  .footer {
+    height: 35px;
+    max-height: 30px;
+  }
 }
 .figure-align {
   display: table;
@@ -594,21 +610,6 @@ body:not(#afui) .upage-outer {
   .margintop {
     margin-top: 20px;
   }
-}
-@media all {
-  .textColor p {
-    font-size: 22px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 200%;
-  }
-}
-/*
-	.footer
-	.footer > button - affects all buttons
-*/
-.footer {
-  bottom: -10px;
 }
 .left-receptacle {
   float: left;

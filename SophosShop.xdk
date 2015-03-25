@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "appDesigner",
       "projectGuid": "f2367b26-549c-479c-bfba-8d20e45ca51f",
-      "lastModifiedDate": 1425327323100,
+      "lastModifiedDate": 1426884235303,
       "creationDate": 1424806753088
     },
     "XDK-app-designer": "true",
@@ -58,6 +58,13 @@
         "selectedState": "Included",
         "data": {},
         "paramvals": {}
+      },
+      {
+        "id": "org.apache.cordova.network-information",
+        "version": "0.2.14",
+        "selectedState": "Included",
+        "data": {},
+        "paramvals": {}
       }
     ],
     "buildConfigurations": {
@@ -66,7 +73,7 @@
         "runtime_": "Cordova 3.x",
         "name_": "Android",
         "preferences_": {
-          "android-minSdkVersion": "10",
+          "android-minSdkVersion": "6",
           "android-targetSdkVersion": "19"
         },
         "isActive_": true,

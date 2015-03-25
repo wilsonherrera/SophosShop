@@ -2,55 +2,58 @@
 <html>
 
 <head>
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="galleria/galleria.classic.css">
-	<link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
-	<link rel="stylesheet" type="text/css" href="css/productCreate_main.less.css" class="main-less">
+	<link rel="stylesheet" type="text/css" href="jqm/jquery.mobile-min.css">
+	<link rel="stylesheet" type="text/css" href="css/myProfilePruebas_main.less.css" class="main-less">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 
 	<script src="intelxdk.js"></script>
 	<script src="cordova.js"></script>
-	<script src="js/app.js"></script>
+	<script src="xhr.js"></script>
+	<script src="xdk/init-dev.js"></script>
+	<script type="application/javascript" src="lib/jquery.min.js"></script>
+	<script type="application/javascript" src="jqm/jquery.mobile-min.js" data-ver="0"></script>
 
-	<script type="application/javascript" src="js/jquery.min.js"></script>
-	<script type="application/javascript" src="js/wsconnection.js"></script>
+	<script src="js/app.js"></script>
 	<script type="application/javascript" src="js/products.js"></script>
+	<script type="application/javascript" src="js/wsconnection.js"></script>
 
 	<script type="application/javascript" src="sidebar/js/jquery.event.move.js"></script>
 	<script type="application/javascript" src="sidebar/js/jquery.event.swipe.js"></script>
 	<script type="application/javascript" src="sidebar/js/sidebar.js"></script>
 	<script type="application/javascript" src="sidebar/js/swipe.js"></script>
 	<script type="application/javascript" src="marginal/marginal-position.min.js"></script>
-	<script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
 	<script type="application/javascript" src="js/app.js"></script>
+	<script type="application/javascript" src="js/myProfile.js"></script>
+
+	<script type="application/javascript" src="popup/popup.min.js"></script>
 </head>
 
-<body onload="onCreateProductInit()">
+<body onload="onCreateProductInit();">
 
-
-	<div id="commentsDialigDiv"></div>
-	<div class="upage fon" id="mainpage">
+	<div class="upage" id="mainpage" data-role="page">
 		<div class="upage-outer">
-			<div class="widget uib_w_10 d-margins textColor sophoscolor" data-uib="media/text" data-ver="0">
-				<div>
-					<p style="width:100%; float: center">Sophos Market
-						<button class="btn widget uib_w_16 d-margins btn-danger sophoscolor bordePreguntas" style="background:none;  border:none;" data-uib="twitter%20bootstrap/button" data-toggle="modal" data-ver="1" data-target="#comments"><i class="glyphicon glyphicon-info-sign button-icon-left" data-position="left"></i>
-						</button>
-					</p>
+			<div data-role="header" class="container-group inner-element uib_w_1 colorSophos" data-uib="jquery_mobile/header" data-ver="0" data-position="fixed" data-theme="b">
+				<h1>Sophos Market</h1>
+				<div class="widget-container wrapping-col single-centered"></div>
+				<div class="widget-container content-area horiz-area wrapping-col left">
+					<a class="widget uib_w_16 d-margins colorSophos sinBorde" data-uib="jquery_mobile/button" data-ver="0" data-role="button" data-icon="info" data-mini="true" href="#popComments" data-rel="popup"></a>
+				</div>
+				<div class="widget-container content-area horiz-area wrapping-col right">
+
 				</div>
 			</div>
-			<div class="content-area vertical-col left" id="page_26_86">
 
-
+			<div class="upage-content content-area vertical-col left" id="page_93_7">
 				<div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
 					<div class="col uib_col_2 col-0_6-12" data-uib="layout/col" data-ver="0">
 						<div class="widget-container content-area vertical-col">
 
-							<div class="widget uib_w_2 d-margins" data-uib="media/img" data-ver="0">
+							<div class="widget uib_w_2 scale-image d-margins" data-uib="media/img" data-ver="0">
 								<figure class="figure-align">
-									<img src="images/imagen.png" id="product_img" height="10%" width="10%">
+									<img src="images/Strabburg.jpg" id="product_img">
+
 									<figcaption data-position="bottom"></figcaption>
 								</figure>
 							</div><span class="uib_shim"></span>
@@ -59,58 +62,84 @@
 					<div class="col uib_col_1 col-0_6-12" data-uib="layout/col" data-ver="0">
 						<div class="widget-container content-area vertical-col">
 
-
-							<button class="btn widget uib_w_3 d-margins btn-sm btn-warning sophoscolor" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnImage">Tomar Foto</button>
-							<button class="btn widget uib_w_4 d-margins btn-sm btn-warning sophoscolor" data-uib="twitter%20bootstrap/button" data-ver="1" onclick="getPhotoFromGallery()">Seleccionar Imagen</button>
+							<a class="widget uib_w_3 d-margins colorSophos" data-uib="jquery_mobile/button" data-ver="0" data-role="button" id="btnImage" data-theme="b" data-mini="true" data-icon="camera" data-iconpos="right">Tomar Foto</a><a class="widget uib_w_4 d-margins colorSophos" data-uib="jquery_mobile/button" data-ver="0" data-role="button" data-theme="b" data-mini="true" data-icon="arrow-u" data-iconpos="right">Subir Imagen</a>
 							<span class="uib_shim"></span>
 						</div>
 					</div>
 					<span class="uib_shim"></span>
 				</div>
-				<span class="widget uib_w_5 marginlabel widthlabel margleft label label-default" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Nombre</span>
-				<div class="table-thing widget uib_w_6 textmargin" data-uib="twitter%20bootstrap/input" data-ver="1">
-					<label class="narrow-control"></label>
-					<input class="wide-control form-control default" type="text" id="product_name">
-				</div><span class="widget uib_w_7 marginlabel widthlabel margleft label label-default" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Precio</span>
-				<div class="table-thing widget uib_w_8 d-margins textmargin" data-uib="twitter%20bootstrap/input" data-ver="1">
-					<label class="narrow-control"></label>
-					<input class="wide-control form-control default" type="text" id="product_price">
-				</div><span class="widget uib_w_9 marginlabel widthlabel margleft label label-default" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Cantidad</span>
-				<div class="table-thing widget uib_w_10 d-margins textmargin" data-uib="twitter%20bootstrap/input" data-ver="1">
-					<label class="narrow-control"></label>
-					<input class="wide-control form-control default" type="text" id="product_quantity">
-				</div><span class="widget uib_w_11 marginlabel widthlabel margleft label label-default" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Descripcion Corta</span>
-				<div class="table-thing widget uib_w_12 d-margins textmargin" data-uib="twitter%20bootstrap/input" data-ver="1">
-					<label class="narrow-control"></label>
-					<input class="wide-control form-control default" type="text" id="product_shortdesc">
-				</div><span class="widget uib_w_13 d-margins marginlabel widthlabel margleft label label-default" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Descripcion Larga</span>
-				<div class="table-thing widget uib_w_14 d-margins textmargin" data-uib="twitter%20bootstrap/text_area" data-ver="1">
-					<label class="narrow-control"></label>
-					<textarea rows="2" class="wide-control form-control" wrap="soft" id="product_longdesc"></textarea>
-				</div>
-				<div class="grid grid-pad urow uib_row_2 row-height-2" data-uib="layout/row" data-ver="0">
 
+				<div class="widget-container content-area vertical-col">
 
-					<div class="col uib_col_5 col-0" data-uib="layout/col" data-ver="0">
-						<div class="widget-container content-area vertical-col">
-
-
-							<button class="btn widget uib_w_16 d-margins btn-lg btn-danger sophoscolor" data-uib="twitter%20bootstrap/button" data-ver="1" id="create">Crear <i class="glyphicon glyphicon-ok-circle button-icon-right" data-position="right"></i>
-							</button><span class="uib_shim"></span>
+					<div class="widget uib_w_12 d-margins" data-uib="media/text" data-ver="0" id="userName">
+						<div>
+							<p style="color: white; text-align: center" class="colorSophosGris">Nombre</p>
+							<input type="text" id="product_name" value="" />
 						</div>
 					</div>
+					<div class="widget uib_w_12 d-margins" data-uib="media/text" data-ver="0" id="userName">
+						<div>
+							<p style="color: white; text-align: center" class="colorSophosGris">Precio</p>
+							<input type="text" id="product_price" value="" />
+						</div>
+					</div>
+					<div class="widget uib_w_12 d-margins" data-uib="media/text" data-ver="0" id="userName">
+						<div>
+							<p style="color: white; text-align: center" class="colorSophosGris">Cantidad</p>
+							<input type="text" id="product_quantity" value="" />
+						</div>
+					</div>
+					<div class="widget uib_w_12 d-margins" data-uib="media/text" data-ver="0" id="userName">
+						<div>
+							<p style="color: white; text-align: center" class="colorSophosGris">Descripción Corta</p>
+							<input type="text" id="product_shortdesc" value="" />
+						</div>
+					</div>
+					<div class="widget uib_w_12 d-margins" data-uib="media/text" data-ver="0" id="userName">
+						<div>
+							<p style="color: white; text-align: center" class="colorSophosGris">Descripción Larga</p>
+							<textarea name="textarea" id="product_longdesc">
+							</textarea>
+						</div>
+					</div>
+
 					<span class="uib_shim"></span>
 				</div>
-			</div>
 
-			<div align="center" class="btn-group uib-bs-flex widget uib_w_3 d-margins footer" data-uib="twitter%20bootstrap/button_group" data-ver="1" style="margin-bottom:1%; position:fixed; width:100%">
-				<button class="btn widget uib_w_4 btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="myproducts"><i class="glyphicon glyphicon-user button-icon-left" data-position="left"></i>Mis Productos</button>
-				<button class="btn widget uib_w_7 d-margins btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="products"><i class="glyphicon glyphicon-shopping-cart button-icon-left" data-position="left"></i>Comprar</button>
-				<button class="btn widget sophoscolor uib_w_5 btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="sale"><i class="glyphicon glyphicon-usd button-icon-left" data-position="left"></i>Vender</button>
-				<button class="btn widget uib_w_6 btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="logout"><i class="glyphicon glyphicon-home button-icon-left" data-position="left"></i>Salir</button>
+				<a class="widget uib_w_11 d-margins colorSophos marginBoton" data-uib="jquery_mobile/button" data-ver="0" data-role="button" id="create" data-theme="b" data-iconpos="right" data-icon="check">Crear</a>
+
+				<div data-role="controlgroup" class="uib-jqm-flex widget uib_w_6 botonGroup" data-uib="jquery_mobile/button_group" data-ver="0" data-type="horizontal" width="100%">
+					<a class="widget uib_w_7 botonFooter colorSophosGris" data-uib="jquery_mobile/button" data-ver="0" data-role="button" id="myproducts" data-theme="b" data-mini="true" data-icon="user">Perfil</a>
+					<a class="widget uib_w_7 botonFooter colorSophosGris" data-uib="jquery_mobile/button" data-ver="0" data-role="button" id="products" data-theme="b" data-mini="true" data-icon="shop">Comprar</a>
+					<a class="widget uib_w_7 botonFooter colorSophos" data-uib="jquery_mobile/button" data-ver="0" data-role="button" id="sale" data-theme="b" data-mini="true" data-icon="navigation">Vender</a>
+					<a class="widget uib_w_7 botonFooter colorSophosGris" data-uib="jquery_mobile/button" data-ver="0" data-role="button" id="logout" data-theme="b" data-mini="true" data-icon="delete">Salir</a>
+				</div>
+
+			</div>
+			<div data-role="popup" class="outer-element uib_w_17 padded-col uib-jqm-popup" data-uib="jquery_mobile/popup" data-ver="0" id="popComments">
+				<div data-role="header" class="ui-corner-top colorSophos" data-theme="b">
+					<h1>Comentarios</h1>
+				</div><a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<div class="col uib_col_5 single-col" data-uib="layout/col" data-ver="0">
+					<div class="widget-container content-area vertical-col">
+
+						<div class="widget uib_w_18 d-margins" data-uib="media/text" data-ver="0">
+							<div class="widget-container left-receptacle"></div>
+							<div class="widget-container right-receptacle"></div>
+							<div>
+								<p>Envianos tus comentarios, quejas, sujerencias o el reporte de algun error.</p>
+							</div>
+						</div>
+						<div class="table-thing with-label widget uib_w_19 d-margins" data-uib="jquery_mobile/textarea" data-ver="0">
+							<label class="narrow-control" for="txComments"></label>
+							<textarea class="wide-control" rows="4" wrap="soft" id="txComments"></textarea>
+						</div><a class="widget uib_w_20 d-margins colorSophos" data-uib="jquery_mobile/button" data-ver="0" data-theme="b" data-role="button">Enviar</a>
+                        
+						<span class="uib_shim"></span>
+					</div>
+				</div>
 			</div>
 		</div>
 </body>
-
 
 </html>

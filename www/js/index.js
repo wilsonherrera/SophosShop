@@ -1,5 +1,5 @@
 function authHandler(response){
-	waitingDialog.hide();
+	hideDialog();
 	switch(response){
 		case '1':
 			localStorage.userName = document.getElementById("username").value;
@@ -7,7 +7,7 @@ function authHandler(response){
 			//alert("Bienvenido "+ document.getElementById("username").value);
 			setTimeout(function(){
 			navigation('login')},0);
-		break;//asdas
+		break;
 		case '0':
 			alert("El usuario o contraseña ingresados son incorrectos");
 		break;
