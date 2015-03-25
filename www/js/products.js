@@ -5,7 +5,7 @@ function fillProductsList() {
 }
 
 function messageHandler(jsonResponse) {
-	waitingDialog.hide();
+	hideDialog();
 	jsonProductArray = jsonResponse.products;
 	var listId = 0;
 	$.each(jsonProductArray, function (key, value) {
@@ -14,15 +14,22 @@ function messageHandler(jsonResponse) {
 		if (value.name.length > 25) {
 			name = value.name.substring(0, 25) + "...";
 		}
-		$('#productListView').append('<a class="list-group-item allow-badge widget uib_w_11" data-uib="twitter%20bootstrap/list_item" data-ver="1" onclick="productDetail(' + listId + ')" ><div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0"><div class="col uib_col_3 col-0_4-12" data-uib="layout/col" data-ver="0"><div class="widget-container content-area vertical-col"><div class="widget uib_w_12 scale-image d-margins" data-uib="media/img" data-ver="0"><figure class="figure-align"><img src="http://190.143.91.138:9191/prestashop/img/p/' + idImage + '/' + idImage + '-cart_default.jpg"><figcaption data-position="bottom"></figcaption></figure></div><span class="uib_shim"></span></div></div><div class="col uib_col_2 col-0_8-12" data-uib="layout/col" data-ver="0"><div class="widget-container content-area vertical-col"><span class="widget uib_w_13 label label-warning" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Producto</span><span class="widget uib_w_14 label label-default" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1" id="product">' + name + '</span><span class="widget uib_w_15 label label-warning margintop" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">Precio</span><span class="widget uib_w_16 label label-default" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1" id="price">$' + parseFloat(value.price).toFixed(2) + '</span><span class="uib_shim"></span></div></div><span class="uib_shim"></span></div></div></a>');
+		$('#productListView').append('<li><a onclick="productDetail(' + listId + ')"><img src="images/loading.gif" width="100%" height="100%" id="imageProduct' + listId + '"/><h3>' + name + '</h3><p>Precio: $' + parseFloat(value.price).toFixed(2) + '</p></a></li>'); 
 		listId++;
 	});
 	$('#productListView').listview('refresh');
+	listId = 0;
+	$.each(jsonProductArray, function (key, value) {
+		var idImage = value.id_default_image;
+		var image = document.getElementById('imageProduct' + listId);
+		image.src = ' http://190.143.91.138:9191/prestashop/img/p/' + idImage + '/' + idImage + '-cart_default.jpg';
+		listId++;
+	});
 }
 
 
 function messageHandlerCreateProduct(response) {
-	waitingDialog.hide();
+	hideDialog();
 	if (response === '1') {
 		alert("Producto Creado");
 	} else {
@@ -31,7 +38,7 @@ function messageHandlerCreateProduct(response) {
 }
 
 function messageHandlerUpdateProduct(response) {
-	waitingDialog.hide();
+	hideDialog();
 	if (response === '1') {
 		alert("Producto actualizado");
 	} else {
@@ -41,7 +48,7 @@ function messageHandlerUpdateProduct(response) {
 
 
 function mailHandler(response) {
-	waitingDialog.hide();
+	hideDialog();
 	if (response === '1') {
 		alert("Correo Enviado");
 	} else {
@@ -107,29 +114,46 @@ function setProductEdit() {
 }
 
 function createProduct() {
-	var jsonProductToCreate = JSON.parse('{}');
-	jsonProductToCreate.userName = (localStorage.userName);
-	jsonProductToCreate.name = (document.getElementById('product_name').value);
-	jsonProductToCreate.price = (document.getElementById('product_price').value);
-	jsonProductToCreate.quantity = (document.getElementById('product_quantity').value);
-	jsonProductToCreate.description = (document.getElementById('product_longdesc').value);
-	jsonProductToCreate.description_short = (document.getElementById('product_shortdesc').value);
-	//TODO agregar campo para condicion, categoria y otros.
-	jsonProductToCreate.condition = "new";
-	localStorage.imgData = localStorage.imgData.replace(/[+ ]/g, '%2B');
-	if (localStorage.edit === "false") {
-		addNewProduct(JSON.stringify(jsonProductToCreate), messageHandlerCreateProduct, localStorage.imgData);
-	} else {
-		var jsonProductToEdit = JSON.parse('{}');
-		jsonProductToEdit.id = (localStorage.productID);
-		jsonProductToEdit.idDefaultImage = localStorage.idDefaultImage;
-		jsonProductToEdit.price = (document.getElementById('product_price').value);
-		jsonProductToEdit.quantity = (document.getElementById('product_quantity').value);
-		jsonProductToEdit.name = (document.getElementById('product_name').value);
-		jsonProductToEdit.desc = (document.getElementById('product_longdesc').value);
-		jsonProductToEdit.desc_short = (document.getElementById('product_shortdesc').value);
-		updateProduct(JSON.stringify(jsonProductToEdit), messageHandlerUpdateProduct, localStorage.imgData);
-	}
+    var pname = (document.getElementById('product_name').value);
+    var pprice = (document.getElementById('product_price').value);
+    var quant = (document.getElementById('product_quantity').value);
+    var ldesc = (document.getElementById('product_longdesc').value);
+    var sdesc = (document.getElementById('product_shortdesc').value);
+    if (pname != "" && pname != null &&
+        pprice != "" && pprice != null &&
+        quant != "" && quant != null &&
+        ldesc != "" && ldesc != null &&
+        sdesc != "" && sdesc != null) {
+
+        if (isNaN(pprice)) {
+            alert("El precio debe ser númerico");
+            return;
+        }
+        if (isNaN(quant)) {
+            alert("La cantidad debe ser númerica");
+            return;
+        }
+
+        var jsonProductToCreate = JSON.parse('{}');
+        jsonProductToCreate.name = pname;
+        jsonProductToCreate.price = pprice;
+        jsonProductToCreate.quantity = quant;
+        jsonProductToCreate.description = ldesc;
+        jsonProductToCreate.description_short = sdesc;
+        //TODO agregar campo para condicion, categoria y otros.
+        localStorage.imgData = localStorage.imgData.replace(/[+ ]/g, '%2B');
+        if (localStorage.edit === "false") {
+            jsonProductToCreate.userName = (localStorage.userName);
+            jsonProductToCreate.condition = "new";
+            addNewProduct(JSON.stringify(jsonProductToCreate), messageHandlerCreateProduct, localStorage.imgData);
+        } else {
+            jsonProductToCreate.id = (localStorage.productID);
+            jsonProductToCreate.idDefaultImage = localStorage.idDefaultImage;
+            updateProduct(JSON.stringify(jsonProductToCreate), messageHandlerUpdateProduct, localStorage.imgData);
+        }
+    } else {
+        alert("Se deben diligenciar todos los campos");
+    }
 }
 
 
@@ -145,38 +169,27 @@ function getPhoto() {
 	});
 }
 
-//selecciona una imagen de la galeria del telefono
-function getPhotoFromGallery(){
-navigator.camera.getPicture(onPhotoFileSuccess, onFail, { quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI,
-		sourceType: 1 });
+
+function getImage() {
+	// Retrieve image file location from specified source
+	navigator.camera.getPicture(onCapturePhotoSuccess, onCapturePhotoError, {
+		quality: 80,
+		destinationType: navigator.camera.DestinationType.DATA_URL,
+		sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+	});
 }
 
-//llamado cuando la imagen es seleccionada del almacenamiento interno, imageData trae la uri de la foto seleccionada
-function onPhotoFileSuccess(imageData) {
-      var imagen=encodeImageUri(imageData);
-     // document.getElementById('product_longdesc').innerHTML =  imagen;
-    var image = document.getElementById('product_img');
-	image.src =  imageData;
-      localStorage.imgData = imagen.substring(22);
+function onCapturePhotoSuccess(imageURI) {
+	var smallImage = document.getElementById('product_img');
+	smallImage.src = "data:image/jpeg;base64," + imageURI;
+	//document.getElementById('product_longdesc').innerHTML = imageURI;
+	localStorage.imgData = imageURI;
 }
 
-//toma la uri de la imagen y retorna su equivalente en base 64
-function encodeImageUri(imageUri)
-{
-     var c=document.createElement('canvas');
-     var ctx=c.getContext("2d");
-    var img=new Image();
-     img.onload = function(){
-       c.width=this.width;
-       c.height=this.height;
-       ctx.drawImage(img, 0,0);
-     };
-     img.src=imageUri;
-     var dataURL = c.toDataURL("image/jpeg");
-     return dataURL;
-}
 
+function onCapturePhotoError(message) {
+	console.log('Captured Failed because: ' + message);
+}
 
 
 
@@ -191,7 +204,7 @@ function onFail(message) {
 }
 
 function isOfferDone(response) {
-	waitingDialog.hide();
+	hideDialog();
 	switch (response) {
 	case "1":
 		alert("La oferta se ha realizado exitosamente");
